@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+- '7'
+branches:
+  only:
+  - "/^v[0-9]/"
+after_success:
+- npm run coverage
+- npm run mocha:json
+- bash <(curl -s https://codecov.io/bash)
+- bash <(curl -s https://codecov.octoblu.com/bash)
+deploy:
+  provider: npm
+  email: serveradmin@octoblu.com
+  api_key:
+    secure: RB13qi6JV3A5uDuhjq8EdZi/bh8/lmibaCEE6Yrr9ItS1jR9xXU4dz+njha2buqI//5/YiIZTh/agGXQFGrXN5SJvZEyI7WLiQ6qH+qs3w1XlkEKJZAbqtK7tnM02KJ9h4YM+w9jQ+WvB3Ndzccn0D3T+krufYT7ZGZgb3ysLPPzPVigVRQPhyDOuUEDIN/3c8hiBIDGV9suiQ8fHQDaKfij2CqQNumvgNboDtDkuXvsFntByEYGfSIeEmbBy8M4VVE9lEDebQG/qbOuIYNonc583ZwB/wDVsDX7nFslTdoUwF5K8o5kIbLlgIdfMymLh162vcvHULVE3sD/9jPAjPHBdL87mygi/v4WaF5IRWVJGZFwQBUgyEo13/pUTyV82cJ5spN4UShxXJaUI/5mUNGxWfUSR2SL/qubSIfvEAqRSzxXN3tNzL4sm6d+kNhZkUl0kFeBL3vRzQpxt3/CmQnA7j3x8Z8Kdfvy4wc46ltn1d/mpjyBL/cbCQMyCqw268kwOrOllLkXdcvlGZV37O/21z4V8AI+JJ9Hav6d1Y/iCTG3orMh28gunsiXjS8ikiueqdoqoUNeTlO7czoeuMRkRJ6EaGRwa1zDH69qM2vyq/PLioKj5qUKsijOKHtiV/62HbIDbKbgu99PJ/PeseEP9hyPiELmsd8SZpFtE+I=
+  on:
+    tags: true
+    repo: octoblu/simple-meshblu-message-as

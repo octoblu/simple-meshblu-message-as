@@ -1,0 +1,23 @@
+{
+  "name": "simple-meshblu-message-as",
+  "version": "1.0.0",
+  "description": "Simple Meshblu messaging library",
+  "main": "index.js",
+  "repository": "git@github.com:octoblu/simple-meshblu-message-as.git",
+  "author": "Octoblu, Inc <npm@octoblu.com>",
+  "license": "MIT",
+  "dependencies": {
+    "coffee-script": "^1.12.5"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-subset": "^1.5.0",
+    "env-test": "^1.0.0",
+    "mocha": "^3.3.0",
+    "mocha-multi": "^0.11.0",
+    "mocha-osx-reporter": "^0.1.2",
+    "nyc": "^10.2.0",
+    "sinon": "^2.1.0",
+    "sinon-chai": "^2.9.0"
+  }
+}
